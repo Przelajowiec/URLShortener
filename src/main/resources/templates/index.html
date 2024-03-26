@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Strona do skracania URL</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<header>
+    <div id="title" class="container">
+        <h1>Zmień swój URL</h1>
+    </div>
+</header>
+<div class="container">
+    <form action="/shorten" method="post">
+        <input type="text" name="originalUrl" placeholder="Wprowadź URL do skrócenia" required>
+        <button type="submit">Skróć</button>
+    </form>
+    <div th:if="${errorMessage}" class="error-message" th:text="${errorMessage}"></div>
+    <div th:if="${shortenedUrl}" class="short-url">
+        <p>Twój skrócony URL:</p>
+    </div>
+</div>
+<div th:if="${shortenedUrl}">
+    <p id="shortenedUrl" style="color: blue; font-weight: bold;" th:text="${shortenedUrl}"></p>
+    <div class="button-container">
+        <button onclick="copyToClipboard()">Kopiuj do schowka</button>
+    </div>
+</div>
+
+<script>
+    function copyToClipboard() {
+        var url = document.getElementById("shortenedUrl").innerText;
+        navigator.clipboard.writeText(url).then(function() {
+            alert('Skrócony URL został skopiowany do schowka');
+        }, function(err) {
+            console.error('Nie udało się skopiować URL-a: ', err);
+        });
+    }
+</script>
+</body>
+</html>

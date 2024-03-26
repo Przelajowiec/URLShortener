@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wynik skracania URL</title>
+</head>
+<body>
+<h2>Twój skrócony URL:</h2>
+<p th:text="'http://localhost:8080/' + ${shortenedUrl}"></p>
+<a th:href="'http://localhost:8080/' + ${shortenedUrl}">Przejdź do strony</a>
+</body>
+</html>
