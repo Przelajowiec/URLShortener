@@ -9,6 +9,7 @@
 <body>
 <header>
     <div id="title" class="container">
+        <img src="/images/logo.jpeg" class="center-auto">
         <h1>Zmień swój URL</h1>
     </div>
 </header>
@@ -23,7 +24,7 @@
     </div>
 </div>
 <div th:if="${shortenedUrl}">
-    <p id="shortenedUrl" style="color: blue; font-weight: bold;" th:text="${shortenedUrl}"></p>
+    <p id="shortenedUrl" style="color: #56ad08; font-weight: bold;" th:text="${shortenedUrl}"></p>
     <div class="button-container">
         <button onclick="copyToClipboard()">Kopiuj do schowka</button>
     </div>
