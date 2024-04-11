@@ -1,1 +1,1 @@
-web: java -jar out/artifacts/URLShortenerApp.jar
+web: java -jar out/artifacts/URLShortenerApp_jar/URLShortenerApp.jar
