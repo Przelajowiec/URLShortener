@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar out/artifacts/URLShortenerApp.jar
+web: java -jar out/artifacts/URLShortenerApp.jar
