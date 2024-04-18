@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pl.harrier</groupId>
-	<artifactId>URLShortenerApp</artifactId>
+	<artifactId>urlshortenerapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>URLShortenerApp</name>
+	<name>urlshortenerapp</name>
 	<description>URL Shortener</description>
 	<properties>
 		<java.version>21</java.version>
@@ -52,6 +52,11 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.30</version>
 		</dependency>
+        <dependency>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>jib-maven-plugin</artifactId>
+            <version>3.4.2</version>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -62,6 +67,22 @@
                 <version>3.11.0</version>
                 <configuration>
                     <release>8</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:17</image>
+                    </from>
+                    <container>
+                        <ports>
+                            <port>8080</port>
+                        </ports>
+                        <format>OCI</format>
+                    </container>
                 </configuration>
             </plugin>
 		</plugins>
