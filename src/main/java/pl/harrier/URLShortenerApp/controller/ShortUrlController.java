@@ -32,8 +32,8 @@ public class ShortUrlController {
     @PostMapping("/shorten")
     public String shortenUrl(@RequestParam String originalUrl, Model model) {
         ShortUrl shortUrl = shortUrlService.shortenUrl(originalUrl);
-        model.addAttribute("shortenedUrl", "http://localhost:8080/" + shortUrl.getShortenedUrl());
-        return "index"; // Przekierowuje z powrotem na stronę główną z informacją o skróconym URL
+        model.addAttribute("shortenedUrl", shortUrl.getShortenedUrl());
+        return "index";
     }
 
 

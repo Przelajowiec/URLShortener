@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>pl.harrier</groupId>
 	<artifactId>urlshortenerapp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<name>urlshortenerapp</name>
 	<description>URL Shortener</description>
 	<properties>
